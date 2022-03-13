@@ -2,23 +2,18 @@ require("dotenv").config()
 
 const express = require('express')
 const app = express()
-const sqlite3 = require('sqlite3')
-const dbname = 'main.db'
+const cors = require('cors');
 
-let db = new sqlite3.Database(dbname, err => {
-    if (err)
-        throw err
-    console.log("Connected on " + dbname)
-})
 
 app.use(express.json())
+app.use(cors({
+    origin: '*',
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
 
 const elevesRouter = require('./routes/eleves')
 app.use('/eleves', elevesRouter)
 
-// db.run(  
-//     `CREATE TABLE eleves(id, first_name, last_name, grade, picture_url)`
-// )
 
 // const sql = `INSERT INTO eleves (id, first_name, last_name, grade, picture_url)
 //             VALUES(?,?,?,?,?)`
@@ -44,4 +39,5 @@ app.use('/eleves', elevesRouter)
 //     console.log("Database closed.")
 // })
 
-app.listen(3000, () => console.log('Server started')) 
+var port = 3000
+app.listen(port, () => console.log('Server started on port '+port)) 

@@ -1,0 +1,29 @@
+GET http://localhost:3000/eleves
+
+###
+GET http://localhost:3000/eleves/0
+
+###
+POST http://localhost:3000/eleves
+Content-Type: application/json
+
+{
+    "id" : 1,
+    "first_name" : "Titouan",
+    "last_name" : "Renaux",
+    "grade" : "Première G5",
+    "picture_url": "../../assets/student.png"
+}
+
+###
+
+POST http://localhost:3000/eleves
+Content-Type: application/json
+
+{
+    "id": 2,
+    "first_name": "Matteo",
+    "last_name": "Dupond",
+    "grade": "Première G5",
+    "picture_url": "../../assets/student.png"
+}
