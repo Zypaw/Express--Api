@@ -1,7 +1,7 @@
 GET http://localhost:3000/eleves
 
 ###
-GET http://localhost:3000/eleves/0
+GET http://localhost:3000/eleves/1
 
 ###
 POST http://localhost:3000/eleves

@@ -1,1 +1,2 @@
-npm run devStart
+npm run devStart #pour lancer le serv
+npm install #pour installer le nodes_modules apres avoir fork le github
